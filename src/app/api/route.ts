@@ -2,7 +2,7 @@ import { unstable_checkRateLimit as checkRateLimit } from '@vercel/firewall';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
-  const status = !(await request.clone().text()).match(/FAIL/i) ? 400 : 200;
+  const status = (await request.clone().text()).match(/FAIL/i) ? 400 : 200;
   const headers = {
     ...Object.fromEntries(request.headers),
     'X-Status': status.toFixed()
