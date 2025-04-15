@@ -16,5 +16,8 @@ export async function POST(request: Request) {
     );
   }
   // Otherwise, continue with other tasks
-  return NextResponse.json({ status: 'OK' });
+  return NextResponse.json(
+    { status: status === 200 ? 'OK' : 'Bad Request' },
+    { status }
+  );
 }
