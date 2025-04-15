@@ -1,11 +1,13 @@
 import { unstable_checkRateLimit as checkRateLimit } from '@vercel/firewall';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   const status = !(await request.clone().text()).match(/FAIL/i) ? 400 : 200;
+  const headers = { ...request.headers, 'X-Status': status.toFixed() };
+  console.log({ headers, status });
   const { rateLimited } = await checkRateLimit('update-object', {
     request,
-    headers: { ...request.headers, 'X-Status': status.toFixed() }
+    headers
   });
   if (rateLimited) {
     return NextResponse.json(
