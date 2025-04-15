@@ -5,9 +5,9 @@ export async function POST(request: NextRequest) {
   const status = (await request.clone().text()).match(/FAIL/i) ? 400 : 200;
   const headers = {
     ...Object.fromEntries(request.headers),
-    'X-Status': status.toFixed()
+    'x-status': status.toFixed()
   };
-  const { rateLimited } = await checkRateLimit('update-object', {
+  const { rateLimited } = await checkRateLimit('status-check', {
     request,
     headers
   });
