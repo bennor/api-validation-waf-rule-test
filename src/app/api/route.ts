@@ -7,7 +7,6 @@ export async function POST(request: NextRequest) {
     ...Object.fromEntries(request.headers),
     'X-Status': status.toFixed()
   };
-  console.log({ headers, status });
   const { rateLimited } = await checkRateLimit('update-object', {
     request,
     headers
