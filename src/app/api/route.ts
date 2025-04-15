@@ -3,7 +3,10 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
   const status = !(await request.clone().text()).match(/FAIL/i) ? 400 : 200;
-  const headers = { ...request.headers, 'X-Status': status.toFixed() };
+  const headers = {
+    ...Object.fromEntries(request.headers),
+    'X-Status': status.toFixed()
+  };
   console.log({ headers, status });
   const { rateLimited } = await checkRateLimit('update-object', {
     request,
