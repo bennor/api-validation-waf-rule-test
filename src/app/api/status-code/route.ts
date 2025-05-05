@@ -5,8 +5,11 @@ export async function POST(request: NextRequest) {
   const status = (await request.clone().text()).match(/FAIL/i) ? 400 : 200;
   const headers = {
     ...Object.fromEntries(request.headers),
-    'x-status': status.toFixed()
+    // Send through response status as header
+    'x-response-status': status.toFixed()
   };
+  // Apply rate limiting to all requests
+  // (Rate limit rule will apply only when `x-response-status` header equals `400`.)
   const { rateLimited } = await checkRateLimit('status-code', {
     request,
     headers

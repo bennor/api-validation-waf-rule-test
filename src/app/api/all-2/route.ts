@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
   // Check rate limit on all requests
-  // (Rate limit rule will apply all requests.)
+  // (Rate limit rule will apply all requests, but be scoped to this path.)
   const { rateLimited } = await checkRateLimit('all', {
     request
   });

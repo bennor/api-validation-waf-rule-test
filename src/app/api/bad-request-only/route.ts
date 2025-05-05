@@ -3,14 +3,11 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
   const status = (await request.clone().text()).match(/FAIL/i) ? 400 : 200;
-  const headers = {
-    ...Object.fromEntries(request.headers),
-    'x-status': status.toFixed()
-  };
+  // Only check rate limiting if response status will be 400
+  // (Rate limit rule will apply to every request, but we're pre-filtering here.)
   if (status === 400) {
     const { rateLimited } = await checkRateLimit('bad-request-only', {
-      request,
-      headers
+      request
     });
     if (rateLimited) {
       return NextResponse.json(
