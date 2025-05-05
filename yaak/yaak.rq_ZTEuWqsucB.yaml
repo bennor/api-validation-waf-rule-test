@@ -1,0 +1,26 @@
+type: http_request
+model: http_request
+id: rq_ZTEuWqsucB
+createdAt: 2025-05-05T00:54:58.656104
+updatedAt: 2025-05-05T01:29:51.283784
+workspaceId: wk_5RMpkYWh8U
+folderId: null
+authentication: {}
+authenticationType: null
+body:
+  text: |-
+    {
+      "expect": "OK"
+    }
+bodyType: application/json
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: wEQNDzqTys
+method: POST
+name: all
+sortPriority: 0.0
+url: https://api-validation-waf-rule-test.vercel.app/api/all
+urlParameters: []

@@ -1,0 +1,26 @@
+type: http_request
+model: http_request
+id: rq_6JkAqp5J4N
+createdAt: 2025-05-05T00:54:47.914829
+updatedAt: 2025-05-05T01:30:09.390285
+workspaceId: wk_5RMpkYWh8U
+folderId: null
+authentication: {}
+authenticationType: null
+body:
+  text: |-
+    {
+      "expect": "OK"
+    }
+bodyType: application/json
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: wEQNDzqTys
+method: POST
+name: 'status-code: 200'
+sortPriority: 3000.0
+url: https://api-validation-waf-rule-test.vercel.app/api/status-code
+urlParameters: []

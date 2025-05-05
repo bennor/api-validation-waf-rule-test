@@ -1,0 +1,26 @@
+type: http_request
+model: http_request
+id: rq_ZPydxwZLAj
+createdAt: 2025-05-05T00:55:52.761842
+updatedAt: 2025-05-05T01:30:18.959380
+workspaceId: wk_5RMpkYWh8U
+folderId: null
+authentication: {}
+authenticationType: null
+body:
+  text: |-
+    {
+      "expect": "OK"
+    }
+bodyType: application/json
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: wEQNDzqTys
+method: POST
+name: 'bad-request-only: 200'
+sortPriority: 5000.0
+url: https://api-validation-waf-rule-test.vercel.app/api/bad-request-only
+urlParameters: []

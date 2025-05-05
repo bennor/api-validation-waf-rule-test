@@ -1,0 +1,26 @@
+type: http_request
+model: http_request
+id: rq_GbEAgVGtf3
+createdAt: 2025-05-05T00:55:39.501501
+updatedAt: 2025-05-05T01:30:04.979079
+workspaceId: wk_5RMpkYWh8U
+folderId: null
+authentication: {}
+authenticationType: null
+body:
+  text: |-
+    {
+      "expect": "FAIL"
+    }
+bodyType: application/json
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: wEQNDzqTys
+method: POST
+name: 'status-code: 400'
+sortPriority: 2000.0
+url: https://api-validation-waf-rule-test.vercel.app/api/status-code
+urlParameters: []

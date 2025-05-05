@@ -1,0 +1,10 @@
+type: workspace
+model: workspace
+id: wk_5RMpkYWh8U
+createdAt: 2025-05-05T01:29:29.200982
+updatedAt: 2025-05-05T01:29:29.200983
+name: API Validation WAF
+description: ''
+settingValidateCertificates: true
+settingFollowRedirects: true
+settingRequestTimeout: 0
