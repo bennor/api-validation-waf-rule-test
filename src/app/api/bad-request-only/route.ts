@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
     'x-status': status.toFixed()
   };
   if (status === 400) {
-    const { rateLimited } = await checkRateLimit('status-check', {
+    const { rateLimited } = await checkRateLimit('bad-request-only', {
       request,
       headers
     });
