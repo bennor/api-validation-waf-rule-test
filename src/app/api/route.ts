@@ -21,7 +21,9 @@ export async function POST(request: NextRequest) {
   }
   // Otherwise, continue with other tasks
   return NextResponse.json(
-    { status: status === 200 ? 'OK' : 'Bad Request', headers },
+    {
+      status: status === 200 ? 'OK' : 'Bad Request'
+    },
     { status }
   );
 }
