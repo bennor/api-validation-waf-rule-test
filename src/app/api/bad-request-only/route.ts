@@ -35,6 +35,6 @@ export async function POST(request: NextRequest) {
   );
 }
 
-async function callDownstreamApi(request: NextRequest) {
+async function callDownstreamApi(_request: NextRequest) {
   // Example only
 }
