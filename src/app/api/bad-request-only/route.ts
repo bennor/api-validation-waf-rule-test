@@ -35,6 +35,7 @@ export async function POST(request: NextRequest) {
   );
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function callDownstreamApi(_request: NextRequest) {
   // Example only
 }
